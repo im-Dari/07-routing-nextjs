@@ -5,7 +5,7 @@ const tags = ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'];
 
 export default function NotesSidebar() {
   return (
-    <nav className={css.sidebar} aria-label="Notes categories">
+    <div className={css.sidebar}>
       <h2 className={css.title}>Categories</h2>
       <ul className={css.menuList}>
         <li className={css.menuItem}>
@@ -21,6 +21,6 @@ export default function NotesSidebar() {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }
