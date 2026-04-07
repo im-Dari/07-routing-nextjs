@@ -7,13 +7,20 @@ export const metadata = {
   title: 'NoteHub',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+  modal,
+}: {
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className="appContainer">
         <TanStackProvider>
           <Header />
           <main className="appContent">{children}</main>
+          {modal}
           <Footer />
           <div id="root"></div>
           <div id="modal-root"></div>

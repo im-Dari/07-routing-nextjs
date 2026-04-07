@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  min-height: calc(100vh - 160px);
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: #ced4da;
+  border: 1px solid #fffbfb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

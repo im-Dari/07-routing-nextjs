@@ -3,19 +3,19 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #333;
-  color: white;
+  background-color: #c0d3f4;
+  color: #333;
 }
 
 .headerLink {
   text-decoration: none;
-  color: white;
+  color: #333;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .headerLink:hover {
-  color: #ddd;
+  color: #555;
 }
 
 .navigation {
@@ -33,10 +33,10 @@
 
 .navigationLink {
   text-decoration: none;
-  color: white;
+  color: #333;
   font-size: 1rem;
 }
 
 .navigationLink:hover {
-  color: #ddd;
+  color: #555;
 }

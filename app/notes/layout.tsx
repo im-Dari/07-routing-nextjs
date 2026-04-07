@@ -1,14 +1,16 @@
+import styles from './NotesLayout.module.css';
+
 export default function NotesLayout({
   children,
-  modal,
+  sidebar,
 }: {
   children: React.ReactNode;
-  modal: React.ReactNode;
+  sidebar: React.ReactNode;
 }) {
   return (
-    <>
-      {children}
-      {modal} {}
-    </>
+    <div className={styles.container}>
+      <aside className={styles.sidebar}>{sidebar}</aside>
+      <main className={styles.main}>{children}</main>
+    </div>
   );
 }
