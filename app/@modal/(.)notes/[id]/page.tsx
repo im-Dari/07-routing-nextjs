@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import Modal from '@/components/Modal/Modal';
-import NotePreview from '@/components/NotePreview/NotePreview';
+import NotePreviewClient from './NotePreview.client';
 
 export default function ModalPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
@@ -11,7 +11,7 @@ export default function ModalPage({ params }: { params: Promise<{ id: string }> 
 
   return (
     <Modal isOpen={true} onClose={() => router.back()}>
-      <NotePreview noteId={id} />
+      <NotePreviewClient noteId={id} />
     </Modal>
   );
 }
