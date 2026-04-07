@@ -16,6 +16,7 @@ export default function NotePreviewClient({ noteId }: NotePreviewClientProps) {
     queryKey: ['note', noteId],
     queryFn: () => fetchNoteById(noteId),
     staleTime: 1000 * 60 * 5,
+    refetchOnMount: false,
   });
 
   return (
