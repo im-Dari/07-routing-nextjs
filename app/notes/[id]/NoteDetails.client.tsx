@@ -1,18 +1,15 @@
 'use client';
+
 import { useQuery } from '@tanstack/react-query';
-import { fetchNoteById } from '../../../lib/api';
+import { fetchNoteById } from '@/lib/api';
 import css from './NoteDetails.module.css';
 
-interface Props {
-  noteId: string;
-}
-
-export default function NoteDetailsClient({ noteId }: Props) {
- const { data: note, isLoading, error } = useQuery({
-  queryKey: ['note', noteId],
-  queryFn: () => fetchNoteById(noteId),
-  refetchOnMount: false,
-});
+export default function NoteDetailsClient({ noteId }: { noteId: string }) {
+  const { data: note, isLoading, error } = useQuery({
+    queryKey: ['note', noteId],
+    queryFn: () => fetchNoteById(noteId),
+    staleTime: 1000 * 60 * 5,
+  });
 
   if (isLoading) return <p>Loading, please wait...</p>;
   if (error || !note) return <p>Something went wrong.</p>;
@@ -23,6 +20,7 @@ export default function NoteDetailsClient({ noteId }: Props) {
         <div className={css.header}>
           <h2>{note.title}</h2>
         </div>
+
         <p className={css.tag}>{note.tag}</p>
         <p className={css.content}>{note.content}</p>
         <p className={css.date}>{note.createdAt}</p>
